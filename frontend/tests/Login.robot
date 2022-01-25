@@ -4,10 +4,11 @@ Documentation       Login test suite
 Resource        ${EXECDIR}/resources/Base.robot
 
 Test Setup      Start Session
-Test Teardown   Finish Session
+Test Teardown   After Session
 
 *Test Cases*
 User Login
+    [Tags]      smoke
 
     ${user}                     Factory User    login
     #Add user from database      ${user} removido para o usu das sementes

@@ -3,6 +3,7 @@ Documentation       Base test
 
 Library     Browser
 Library     Collections
+Library     Utils.py
 
 Library     factories/Users.py
 
@@ -19,9 +20,13 @@ ${BASE_URL}      https://getgeeks-daniel.herokuapp.com
 
 *Keywords*
 Start Session
-    New Browser     chromium        headless=False      slowMo=00:00:00.5
-    New Page        ${BASE_URL}
+    #New Browser             chromium        headless=False      #slowMo=00:00:00.5
+    
+    New Browser             ${BROWSER}        headless=${headless}      #slowMo=00:00:00.5
+    New Page                ${BASE_URL}
+    Set Viewport Size       1280    760
 
-Finish Session
-    Take Screenshot     fullPage=True
+After Session
+    ${shot_name}        Screenshot Name
+    Take Screenshot     fullPage=True       filename=${shot_name}
     
