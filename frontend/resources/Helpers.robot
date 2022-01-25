@@ -16,3 +16,11 @@ Add user from database
     Connect to postgress
     Insert user     ${user}
     Disconnect From Database
+
+Do login
+    [Arguments]     ${user}
+
+    Go to login page
+    Fill credencials  ${user}
+    Submit credencials
+    User should be logged in  ${user}

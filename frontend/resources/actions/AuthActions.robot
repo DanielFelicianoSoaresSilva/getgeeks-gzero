@@ -28,6 +28,7 @@ User should be logged in
 
     Wait For Elements State     ${element}      visible     5
     Get Text                    ${element}      equal       ${expected_fullname}
+    sleep   1
 
 #validar mensagem do navegador, onde não é possivel validar o elemento
 Should be type email

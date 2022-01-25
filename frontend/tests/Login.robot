@@ -9,14 +9,13 @@ Test Teardown   Finish Session
 *Test Cases*
 User Login
 
-    ${user}                     Factory User Login
+    ${user}                     Factory User    login
     #Add user from database      ${user} removido para o usu das sementes
 
     Go to login page
     Fill credencials            ${user}
     Submit credencials
     User should be logged in    ${user}
-    sleep   1
     
 Incorrect Pass
     [Tags]      attempt_login       ipass
