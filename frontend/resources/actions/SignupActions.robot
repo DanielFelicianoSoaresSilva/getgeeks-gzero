@@ -31,19 +31,3 @@ Alert span should be
     [Arguments]     ${expected_alert}
 
     Wait For Elements State     css=span[class=error] >> text=${expected_alert}        visible     5
-
-Alerts spans should be
-    [Arguments]     ${expected_alerts}
-
-    @{got_alerts}   Create List
-
-    ${spans}        Get Elements        xpath=//span[@class="error"]
-
-    FOR     ${span}     IN      @{spans}
-
-        ${text}             Get Text            ${span}
-        Append To List      ${got_alerts}       ${text}
-
-    END
-
-    Lists Should Be Equal       ${expected_alerts}      ${got_alerts}
