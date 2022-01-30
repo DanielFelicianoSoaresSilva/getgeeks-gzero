@@ -3,3 +3,4 @@ fake = Faker()
 
 def screenshot_name():
     return fake.sha1()
+    

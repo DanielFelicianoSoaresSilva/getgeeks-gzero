@@ -34,3 +34,4 @@ User should be logged in
 Should be type email
     #Pega a propriedade do elemento id=email, na qual a propriedade é type e o comparardor de igualdade equal email
     Get Property       ${INPUT_EMAIL}        type        equal       email
+    

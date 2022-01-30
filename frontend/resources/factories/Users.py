@@ -60,31 +60,6 @@ def factory_user(target):
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     #     'short_desc': {
     #         'name': 'Peter',
     #         'lastname': 'Jordan',
