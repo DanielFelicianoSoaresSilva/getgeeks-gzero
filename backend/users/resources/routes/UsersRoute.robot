@@ -22,4 +22,25 @@ DELETE User
     
     [return]        ${response} 
 
+GET User
+    [Arguments]     ${token}
+
+    ${headers}      Create Dictionary       Authorization=${token}
+
+    ${response}     GET             ${API_USERS}/users
+    ...                             headers=${headers}
+    ...                             expected_status=any
+
+    [return]        ${response}
     
+PUT User
+    [Arguments]     ${token}        ${payload}
+
+    ${headers}      Create Dictionary       Authorization=${token}
+
+    ${response}     PUT        ${API_USERS}/users      # endereço com a rota
+    ...                        json=${payload}         # massa de teste
+    ...                        headers=${headers}
+    ...                        expected_status=any     # aceita outras validações além do 200
+    
+    [return]        ${response}                         # devolve para quem chamar

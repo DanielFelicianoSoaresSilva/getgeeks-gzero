@@ -6,6 +6,40 @@ def factory_new_user():
         'password': 'pwd123'
     }
 
+def factory_get_user():
+
+    return {
+        'name': 'Gwen Stacy',
+        'email': 'stacy@ozcorp.com',
+        'password': 'pwd123'
+    }
+
+def factory_remove_user():
+
+    return {
+        'name': 'Thaddeus Ross',
+        'email': 'ross@gmail.com',
+        'password': 'pwd123'
+    }
+
+def factory_update_user():
+
+    email = 'feliciano@gmail.com'
+
+    return {
+        'before': {
+            'name': 'Feliciano Daniel',
+            'email': email,
+            'password': 'pwd123'
+        },
+        'after': {
+            'name': 'Daniel Feliciano',
+            'email': email,
+            'whatsapp': '11999999999',
+            'avatar': 'https://avatars.githubusercontent.com/u/88690749'
+        }
+    }
+
 def factory_user_session(target):
 
     name = 'Kate Bishop',
@@ -26,4 +60,3 @@ def factory_user_session(target):
 
     return data[target]
 
-    
