@@ -1,5 +1,6 @@
 *Settings*
-Documentation           Base test
+Documentation       Base test
+
 Library     RequestsLibrary
 Library     factories/Users.py
 

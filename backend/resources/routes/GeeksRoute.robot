@@ -1,5 +1,5 @@
 *Settings*
-Documentation           Geeks route
+Documentation       Geeks Route
 
 *Keywords*
 POST Geek
@@ -7,22 +7,9 @@ POST Geek
 
     ${headers}      Create Dictionary       Authorization=${token}
 
-    ${response}     POST
-    ...             ${API_GEEKS}/geeks
-    ...             json=${payload}
-    ...             headers=${headers}
-    ...             expected_status=any
-
-    [return]  ${response}
-
-GET Geeks
-    [Arguments]     ${token}
-
-    ${headers}      Create Dictionary       Authorization=${token}
-
-    ${response}     GET
-    ...             ${API_GEEKS}/geeks
-    ...             headers=${headers}
-    ...             expected_status=any
-
-    [return]  ${response}
+    ${response}     POST        ${API_GEEKS}/geeks      # endereço com a rota
+    ...                         json=${payload}         # massa de teste
+    ...                         headers=${headers}
+    ...                         expected_status=any     # aceita outras validações além do 200
+    
+    [return]        ${response}
