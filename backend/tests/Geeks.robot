@@ -1,5 +1,5 @@
 *Settings*
-Documentation       Geekroute teste suite
+Documentation       Geek route test suite
 
 Resource            ${EXECDIR}/resources/Base.robot
 
@@ -42,3 +42,29 @@ Be a geek
     
     Should Be Equal As Strings      None                                            ${response.json()}[avatar]
     Should Be Equal As Strings      True                                            ${response.json()}[is_geek]
+
+Get geek list
+    [Tags]      temppp
+
+    ${data}     Factory Search For Geeks
+
+    FOR     ${geek}     IN      @{data}[geeks]
+
+        POST User   ${geek}
+        ${token}    Get token   ${geek}
+
+        POST Geek   ${token}    ${geek}[geek_profile]
+
+
+    END
+
+    POST User   ${data}[user]
+
+    ${token}    Get token   ${data}[user]
+
+    ${response}         GET Geeks       ${token}
+    Status Should Be    200             ${response}
+
+    ${total}            Get Length      ${response.json()}[Geeks]
+
+    Should Be True      ${total} > 0
