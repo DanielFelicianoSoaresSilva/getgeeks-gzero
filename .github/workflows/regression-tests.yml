@@ -40,4 +40,4 @@ jobs:
       with: 
         name: API Test Result
         path: backend/logs/unit.xml
-        reporter: java-unit
+        reporter: java-junit
