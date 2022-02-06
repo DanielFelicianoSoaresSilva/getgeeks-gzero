@@ -7,7 +7,7 @@
 
 # Utilizando PABOT
 robot -l NONE -o NONE -r NONE tasks/Delorean.robot
-pabot -d ./logs -v BROWSER:chromium -v HEADLESS:True tests/
+pabot -x xunit.xml -d ./logs -v BROWSER:chromium -v HEADLESS:True tests/
 
 # Corrigir erro das evidencias PABOT
 # Apagar a pasta criada e criar uma nova pasta browser e screenshot
