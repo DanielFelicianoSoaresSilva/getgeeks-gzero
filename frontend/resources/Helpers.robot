@@ -24,3 +24,9 @@ Do login
     Fill credencials  ${user}
     Submit credencials
     User should be logged in  ${user}
+
+Create geek profile as a service
+    [Arguments]     ${user}
+
+    ${token}                    Get token as a service          ${user}
+    Be a Geek as a Service      ${user}[geek_profile]          ${token}

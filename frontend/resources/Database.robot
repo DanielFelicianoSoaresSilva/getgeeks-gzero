@@ -32,7 +32,7 @@ Users seed
 
     ${users}    Users To Insert DB
 
-    FOR     ${user}    IN   @{users}
+    FOR     ${user}     IN      @{users}
 
         Insert user  ${user}
         
