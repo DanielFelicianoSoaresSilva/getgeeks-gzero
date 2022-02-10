@@ -13,7 +13,8 @@ def users_to_insert_db(): # nova forma dre utilizar o user seed
         factory_user('be_geek'),
         factory_user('attempt_be_geek'),
         factory_user('search_alien'),
-        factory_user('search_common')
+        factory_user('search_common'),
+        factory_user('searcher')
     ]
 
 def factory_user(target):
@@ -62,6 +63,12 @@ def factory_user(target):
                 'work': 'Remoto',
                 'cost': '150'
             }
+        },
+        'searcher': {
+            'name': 'Johnny',
+            'lastname': 'Lawrence',
+            'email': 'johnny@cobrakai.com',
+            'password': 'pwd123'
         },
         'search_alien': {
             'name': 'Dock',

@@ -7,6 +7,12 @@ Go to geek form
 
     Wait For Elements State     css=.be-geek-form       visible     5
 
+Go to geeks
+    Click       css=a[href="/geeks"] >> text=Geeks
+
+    Wait For Elements State         css=.title strong >> text=Estes são os Geeks disponíveis.
+    ...                             visible     5
+
 Fill geek form
     [Arguments]     ${geek_profile}
 
@@ -26,8 +32,20 @@ Fill geek form
 
     Fill Text       id=cost                 ${geek_profile}[cost]
 
+Fill search form
+    [Arguments]     ${target_option}        ${target_text}
+
+    IF      '${target_option}'
+        Select Options By       id=printer_repair       value       ${target_option}
+    END
+    
+    Fill Text       id=desc                 ${target_text}
+
 Submit geek form
     Click       css=button >> text=Quero ser um Geek
+
+Submit search form
+    Click       css=button[type='submit'] >> text=Buscar
 
 Geek form should be success
     ${expected_message}     Set Variable        Seu cadastro está na nossa lista de geeks. Agora é só ficar de olho no seu WhatsApp.
@@ -37,4 +55,3 @@ Geek form should be success
 
 Reset geek form
     Execute Javascript      document.getElementsByClassName("be-geek-form")[0].reset();
-
