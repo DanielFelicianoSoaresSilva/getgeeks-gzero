@@ -87,7 +87,14 @@ def factory_user(target):
             'name': 'Peter',
             'lastname': 'Parker',
             'email': 'parker@oscorp.com',
-            'password': 'pwd123'
+            'password': 'pwd123',
+            'geek_profile': {
+                'whatsapp': '11999991002',
+                'desc': 'Instalo Distros Ubuntu, Debian, ElementaryOS, PopOS, Linux Mint, Kurumin, Mandrake, Connectiva, Fedora, RedHat, CentOS, Slackware, Gentoo, Archlinux, Kubuntu, Xubuntu, Suze, Mandriva, Edubuntu, KateOS, Sabayon Linux, Manjaro Linux, BigLinux, ZorinOS, Unit',
+                'printer_repair': 'Não',
+                'work': 'Remoto',
+                'cost': '200'
+            }
         }
     }
 

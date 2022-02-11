@@ -4,6 +4,7 @@ Documentation       Base test
 Library     Browser
 Library     Collections
 Library     Utils.py
+Library     String
 
 Library     factories/Users.py
 
